@@ -38,7 +38,7 @@ public class TokenInterceptor extends HandlerInterceptorAdapter {
     }
 
     /**
-     *  业务处理成功 删除token
+     *  后处理 删除token
      * @param request
      * @param response
      * @param handler
