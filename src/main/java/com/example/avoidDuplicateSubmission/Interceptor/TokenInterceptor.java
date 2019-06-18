@@ -20,7 +20,7 @@ public class TokenInterceptor extends HandlerInterceptorAdapter {
     private DefaultListableBeanFactory beanFactory;
 
     /**
-     *
+     * 请求预处理 写入token
      * @param request
      * @param response
      * @param handler
@@ -37,7 +37,14 @@ public class TokenInterceptor extends HandlerInterceptorAdapter {
         return super.preHandle(request, response, handler);
     }
 
-    // 业务处理成功 删除token
+    /**
+     *  业务处理成功 删除token
+     * @param request
+     * @param response
+     * @param handler
+     * @param modelAndView
+     * @throws Exception
+     */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
         if (handler instanceof HandlerMethod) {

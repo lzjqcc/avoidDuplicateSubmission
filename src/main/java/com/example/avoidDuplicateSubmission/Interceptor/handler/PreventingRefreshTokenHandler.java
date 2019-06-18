@@ -24,7 +24,6 @@ public class PreventingRefreshTokenHandler implements TokenHandler {
         HttpSession session = request.getSession();
         // 如果存在，表示请求正在处理。
         if (session.getAttribute(request.getRequestURI()) != null) {
-            System.out.println("重复提交");
             try {
                 response.getOutputStream().write("重复提交".getBytes("GBK"));
             } catch (IOException e) {
